@@ -51,7 +51,7 @@ class LivePredictions:
         return label
 
 # Declare a Flask app
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
