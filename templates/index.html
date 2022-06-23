@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="icon" href= "{{ url_for('static',filename='assets/images/video-bg.jpg') }}" type="image/icon type">
+
+    <title>Emotion Recognizer</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+
+    <!-- Additional CSS Files -->
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/css/fontawesome.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/css/templatemo-grad-school.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/css/owl.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/css/lightbox.css') }}">
+    
+    
+
+<!--
+    
+TemplateMo 557 Grad School
+
+https://templatemo.com/tm-557-grad-school
+
+-->
+  </head>
+
+<body>
+
+   
+  <!--header-->
+  <header class="main-header clearfix" role="header">
+    <div class="logo">
+      <a href="#"><em>Emotion</em> Recognizer</a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="#section1">Home</a></li>
+        <li><a href="#section4">Application</a></li>
+        <!-- <li><a href="#section5">Video</a></li> -->
+        <li><a href="#section6">Contact</a></li>
+        <li><a href="https://github.com/achrafs758" class="external">External</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ***** Main Banner Area Start ***** -->
+  <section class="section main-banner" id="top" data-section="section1">
+      <video autoplay muted loop id="bg-video">
+          <source src="static/assets/images/course-video.mp4" type="video/mp4" />
+      </video>
+
+      <div class="video-overlay header-text">
+          <div class="caption">
+              <h6>Emotion recognition in speech</h6>
+              <h2><em>Your</em> Recognizer</h2>
+              <div class="main-button">
+                  <div id="myBtn" class="scroll-to-section"><a href="#section2">Discover more</a></div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- ***** Main Banner Area End ***** -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>In this work, we conduct an extensive comparison of various approaches to speech based emotion recognition systems. The analyses were carried out on audio recordings from Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS). After pre-processing the raw audio files, features such as Log-Mel Spectrogram, Mel-Frequency Cepstral Coefficients (MFCCs), pitch and energy were considered. The significance of these features for emotion classification was compared by applying methods such as Long Short Term Memory (LSTM), Convolutional Neural Networks (CNNs), Hidden Markov Models (HMMs) and Deep Neural Networks (DNNs). On the 14-class (2 genders x 7 emotions) classification task, an accuracy of 68% was achieved with a 4-layer 2 dimensional CNN using the Log-Mel Spectrogram features. We also observe that, in emotion recognition, the choice of audio features impacts the results much more than the model complexity.</p>
+    </div>
+  
+  </div>
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+
+
+  
+
+
+  <section class="section courses" data-section="section4">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Pick the audio and make your prediction</h2>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+
+  <section class="section video" data-section="section5">
+    <div  class="container">
+      <div class="row">
+        <div class="col-md-6 align-self-center">
+          <div  class="left-content">
+            
+            <div class="main-button">  <form name="form", method="POST", style="margin-top:-45%;" id="todo-form">
+              
+             <input type="file" value="Browse" style=" border-radius: 100px;   background-color: transparent;
+             color: #fff;
+             font-size: 13px;
+             text-transform: uppercase;
+             letter-spacing: 0.5px;
+             font-weight: 700;
+             padding: 12px 20px;
+             display: inline-block;
+             outline: none;
+             box-shadow: none;
+             border: none;
+             margin-bottom:12% ;margin-left:-4%;" onchange="updateSource();" name="todo" id="todo" required/>
+             
+
+
+<script >
+
+function updateSource(){ 
+ 
+  document.getElementById("audio").src= 
+        'static/Audios/' + 
+        document.getElementById("todo").value.replace(/C:\\fakepath\\/, '');
+        var element = document.getElementById("audio");
+        element.style.display = "";
+    }
+</script>
+              <br><br>
+              <div class="scroll-to-section" >
+                <fieldset>
+                <button onclick="changeStyle()" style="    background-color: #f5a425;
+                color: #fff;
+                font-size: 13px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                font-weight: 700;
+                padding: 12px 35px;
+                outline: none;
+                box-shadow: none;border-radius: 100px;
+                border: none;" type="submit" value="submit">Predict</button></div>
+              </fieldset>
+              </div>
+            
+          </div>
+        </div>
+        <div  style="margin-bottom:20%;" class="col-md-6">
+          <audio  id="audio" style="display:none;margin-left: 20%;"" controls>
+    
+            <source src=""  type="audio/ogg"></source>
+        </audio>
+          <article  style="margin-top: 23%;" class="video-item">
+              
+          </form>
+          
+          <div class="video-caption"  style="display:none;border: medium inset transparent;margin-left: 20%;" id="output">
+          </div>
+          </article>
+        </div>
+    </div>
+    </div>
+  </section>
+
+  <script>
+    function changeStyle(){
+        var element = document.getElementById("output");
+        element.style.display = "none";
+    }
+    </script>
+ 
+ 
+
+
+
+  <section class="section contact" data-section="section6">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Let’s Keep In Touch</h2>
+          </div>
+        </div>
+        <div class="col-md-6">
+        
+        <!-- Do you need a working HTML contact-form script?
+                	
+                    Please visit https://templatemo.com/contact page -->
+                    
+          <form id="contact" action="" >
+            <div class="row">
+              <div class="col-md-6">
+                  <fieldset>
+                    <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required="">
+                    <br><br>
+                  </fieldset>
+                </div>
+                <div class="col-md-6">
+                  <fieldset>
+                    <input name="email" type="text" class="form-control" id="email" placeholder="Your Email" required="">
+                  </fieldset>
+                </div>
+              <div class="col-md-12">
+                <fieldset>
+                  <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+                </fieldset>
+              </div>
+              <div class="col-md-12">
+                <fieldset>
+                  <button id="form-submit" class="button">Send Message Now</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3397.2981334319643!2d-8.066105198756805!3d31.625686549005884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafe940a12d5657%3A0xa684dabe7c10a52e!2sDouar%20Iziki%2C%20Marrakesh%2040150%2C%20Morocco!5e0!3m2!1sen!2sus!4v1655576443643!5m2!1sen!2sus" width="100%" height="422px" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><i class="fa fa-copyright"></i> Copyright 2022 by El bouga Latifa & Soulala Achraf  
+          
+           | Design: <a href="" rel="sponsored" target="_parent">Excelsior</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+ 
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/js/isotope.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/js/owl-carousel.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/js/custom.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/js/slick-slider.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/js/video.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/js/tabs.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/js/lightbox.js')}}"></script>
+
+
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .scroll-to-section').on('click', 'a', function (e) {
+          if($(e.target).hasClass('external')) {
+            return;
+          }
+          e.preventDefault();
+          $('#menu').removeClass('active');
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script>
+      <script src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"></script>
+
+      <script> 
+
+        const getValueInput = () =>{
+          let inputValue = document.getElementById("todo").value; 
+          document.getElementById("bouga").innerHTML = inputValue; 
+        }
+        
+      </script>
+ 
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#todo-form').on('submit',function(e){
+      $.ajax({
+        data : {
+          todo : $('#todo').val().split('\\').pop(),
+      
+        },
+        type : 'POST',
+        url : '/'
+      })
+      .done(function(data){
+        $('#output').text(data.output).show();
+      });
+      e.preventDefault();
+    });
+  });
+</script>
+
+</body>
+</html>
